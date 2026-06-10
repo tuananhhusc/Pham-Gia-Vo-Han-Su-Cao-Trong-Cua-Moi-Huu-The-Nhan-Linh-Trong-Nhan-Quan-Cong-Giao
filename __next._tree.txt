@@ -1,0 +1,10 @@
+:HL["/Pham-Gia-Vo-Han-Su-Cao-Trong-Cua-Moi-Huu-The-Nhan-Linh-Trong-Nhan-Quan-Cong-Giao/_next/static/chunks/02_wq7ueqa29v.css","style"]
+:HL["/Pham-Gia-Vo-Han-Su-Cao-Trong-Cua-Moi-Huu-The-Nhan-Linh-Trong-Nhan-Quan-Cong-Giao/_next/static/media/14e23f9b59180572-s.p.0t8ljjjn9wtsx.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Pham-Gia-Vo-Han-Su-Cao-Trong-Cua-Moi-Huu-The-Nhan-Linh-Trong-Nhan-Quan-Cong-Giao/_next/static/media/257505a8a5531435-s.p.3fblrcgogb7zr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Pham-Gia-Vo-Han-Su-Cao-Trong-Cua-Moi-Huu-The-Nhan-Linh-Trong-Nhan-Quan-Cong-Giao/_next/static/media/2a65768255d6b625-s.p.3u4lli0-axodc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Pham-Gia-Vo-Han-Su-Cao-Trong-Cua-Moi-Huu-The-Nhan-Linh-Trong-Nhan-Quan-Cong-Giao/_next/static/media/2bbe8d2671613f1f-s.p.0k62hbripvv8p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Pham-Gia-Vo-Han-Su-Cao-Trong-Cua-Moi-Huu-The-Nhan-Linh-Trong-Nhan-Quan-Cong-Giao/_next/static/media/4ee71d90e0f663bd-s.p.097q2tn174-o0.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Pham-Gia-Vo-Han-Su-Cao-Trong-Cua-Moi-Huu-The-Nhan-Linh-Trong-Nhan-Quan-Cong-Giao/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Pham-Gia-Vo-Han-Su-Cao-Trong-Cua-Moi-Huu-The-Nhan-Linh-Trong-Nhan-Quan-Cong-Giao/_next/static/media/e4505858a30c79c2-s.p.3u_lhbhd6z8rx.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Pham-Gia-Vo-Han-Su-Cao-Trong-Cua-Moi-Huu-The-Nhan-Linh-Trong-Nhan-Quan-Cong-Giao/_next/static/media/e557826f452dbd06-s.p.18ty61h5-qdwv.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"LVnR6g1ZrYrAOhGj9uIk3"}
