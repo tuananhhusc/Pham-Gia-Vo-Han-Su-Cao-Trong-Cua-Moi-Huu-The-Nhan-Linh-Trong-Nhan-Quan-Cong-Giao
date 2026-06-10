@@ -1,0 +1,687 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Register theme class-based variants for Tailwind v4 */
+@variant dark (html.theme-dark &);
+@variant sepia (html.theme-sepia &);
+
+/* ═══════════════════════════════════════════════════════════════
+   Catholic Academic Reading Theme — Design Tokens & Variables
+   ═══════════════════════════════════════════════════════════════ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Catholic Palette */
+  --color-parchment: #F9F8F6;
+  --color-parchment-dark: #F0EDE8;
+  --color-burgundy: #6B1C23;
+  --color-burgundy-light: #8B2E3A;
+  --color-burgundy-dark: #4A0E15;
+  --color-gold: #B8860B;
+  --color-gold-light: #D4A843;
+  --color-gold-subtle: #C9A84C;
+  --color-charcoal: #2D2D2D;
+  --color-charcoal-light: #4A4A4A;
+  --color-slate-text: #3B3B3B;
+  --color-slate-muted: #6B6B6B;
+}
+
+:root {
+  --background: #F9F8F6;
+  --foreground: #2D2D2D;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Base Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), 'Lora', 'Georgia', 'Times New Roman', serif;
+  line-height: 1.8;
+}
+
+::selection {
+  background-color: rgba(107, 28, 35, 0.2);
+  color: #4A0E15;
+}
+
+::-moz-selection {
+  background-color: rgba(107, 28, 35, 0.2);
+  color: #4A0E15;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Reading Progress Bar
+   ═══════════════════════════════════════════════════════════════ */
+
+#reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6B1C23, #8B2E3A, #B8860B);
+  z-index: 9999;
+  transition: width 50ms linear;
+  box-shadow: 0 0 8px rgba(107, 28, 35, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Typography — Prose Customization
+   ═══════════════════════════════════════════════════════════════ */
+
+.prose {
+  --tw-prose-body: #3B3B3B;
+  --tw-prose-headings: #4A0E15;
+  --tw-prose-links: #6B1C23;
+  --tw-prose-bold: #2D2D2D;
+  --tw-prose-counters: #6B6B6B;
+  --tw-prose-bullets: #B8860B;
+  --tw-prose-hr: rgba(107, 28, 35, 0.2);
+  --tw-prose-quotes: #4A0E15;
+  --tw-prose-quote-borders: #B8860B;
+  --tw-prose-captions: #6B6B6B;
+  --tw-prose-th-borders: rgba(107, 28, 35, 0.3);
+  --tw-prose-td-borders: rgba(107, 28, 35, 0.15);
+}
+
+/* Headings */
+.prose :where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-family: var(--font-heading), 'Playfair Display', serif;
+  color: #4A0E15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  padding-bottom: 0.4em;
+  border-bottom: 2px solid rgba(184, 134, 11, 0.3);
+}
+
+.prose :where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-family: var(--font-heading), 'Playfair Display', serif;
+  color: #6B1C23;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+}
+
+.prose :where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-family: var(--font-heading), 'Playfair Display', serif;
+  color: #6B1C23;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+}
+
+.prose :where(h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-family: var(--font-heading), 'Playfair Display', serif;
+  color: #8B2E3A;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Paragraphs */
+.prose :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  line-height: 1.85;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+/* Links */
+.prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  color: #6B1C23;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.4);
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)):hover {
+  color: #8B2E3A;
+  border-bottom-color: #B8860B;
+  background-color: rgba(184, 134, 11, 0.06);
+}
+
+/* Blockquotes */
+.prose :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  border-left: 4px solid #B8860B;
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.04), rgba(107, 28, 35, 0.03));
+  padding: 1.2em 1.5em;
+  margin: 2em 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #4A0E15;
+  position: relative;
+}
+
+.prose :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))::before {
+  content: "\201C";
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: rgba(184, 134, 11, 0.25);
+  position: absolute;
+  top: -0.1em;
+  left: 0.3em;
+  line-height: 1;
+}
+
+.prose :where(blockquote p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+/* Tables */
+.prose :where(table):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+  font-size: 0.9em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.prose :where(thead):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  background: linear-gradient(135deg, #4A0E15, #6B1C23);
+  color: #F9F8F6;
+}
+
+.prose :where(th):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  padding: 0.8em 1em;
+  text-align: left;
+  font-weight: 600;
+  font-family: var(--font-heading), 'Playfair Display', serif;
+  border-bottom: 2px solid #B8860B;
+  color: #F9F8F6;
+}
+
+.prose :where(td):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  padding: 0.8em 1em;
+  border-bottom: 1px solid rgba(107, 28, 35, 0.12);
+  vertical-align: top;
+}
+
+.prose :where(tbody tr):not(:where([class~="not-prose"],[class~="not-prose"] *)):nth-child(even) {
+  background-color: rgba(184, 134, 11, 0.03);
+}
+
+.prose :where(tbody tr):not(:where([class~="not-prose"],[class~="not-prose"] *)):hover {
+  background-color: rgba(107, 28, 35, 0.04);
+  transition: background-color 0.2s ease;
+}
+
+/* Horizontal Rules */
+.prose :where(hr):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #B8860B, transparent);
+  margin: 3em 0;
+}
+
+/* Strong */
+.prose :where(strong):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  color: #2D2D2D;
+  font-weight: 700;
+}
+
+/* Emphasis */
+.prose :where(em):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  color: #4A4A4A;
+}
+
+/* Lists */
+.prose :where(ul > li):not(:where([class~="not-prose"],[class~="not-prose"] *))::marker {
+  color: #B8860B;
+}
+
+.prose :where(ol > li):not(:where([class~="not-prose"],[class~="not-prose"] *))::marker {
+  color: #6B1C23;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   First Paragraph Drop Cap Effect (applied via component)
+   ═══════════════════════════════════════════════════════════════ */
+
+.drop-cap::first-letter {
+  float: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 4em;
+  line-height: 0.8;
+  padding-right: 0.1em;
+  color: #6B1C23;
+  font-weight: 700;
+  margin-top: 0.05em;
+}
+
+html.theme-dark .drop-cap::first-letter {
+  color: #E5C158 !important;
+}
+
+html.theme-sepia .drop-cap::first-letter {
+  color: #7A2F37 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Decorative Elements
+   ═══════════════════════════════════════════════════════════════ */
+
+.ornament {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #B8860B;
+  opacity: 0.6;
+  margin: 2rem 0;
+  letter-spacing: 0.5em;
+}
+
+.ornament-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.ornament-line::before,
+.ornament-line::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(184, 134, 11, 0.4), transparent);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Footnotes Styling (Academic)
+   ═══════════════════════════════════════════════════════════════ */
+
+.prose :where(sup):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  top: -0.5em;
+  font-size: 0.75em;
+}
+
+.prose :where(sup a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  color: #8B2E3A;
+  text-decoration: none;
+  border-bottom: none;
+  padding: 0 0.1em;
+}
+
+.prose :where(sup a):not(:where([class~="not-prose"],[class~="not-prose"] *)):hover {
+  color: #B8860B;
+  background-color: transparent;
+}
+
+.prose :where(section[data-footnotes]):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 4em;
+  padding-top: 2em;
+  border-top: 1px solid rgba(184, 134, 11, 0.3);
+}
+
+.prose :where(section[data-footnotes] h2):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  display: none; /* Hide the default "Footnotes" heading if we want a custom one, or we can leave it */
+}
+
+.prose :where(section[data-footnotes] ol):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  padding-left: 1.5em;
+  font-size: 0.9em;
+  color: #6B6B6B;
+}
+
+.prose :where(section[data-footnotes] li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-bottom: 0.5em;
+  position: relative;
+}
+
+.prose :where(section[data-footnotes] p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline;
+}
+
+.prose :where(.data-footnote-backref):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  text-decoration: none;
+  border-bottom: none;
+  margin-left: 0.5em;
+  font-family: var(--font-sans);
+  color: #B8860B;
+}
+
+.prose :where(.data-footnote-backref):not(:where([class~="not-prose"],[class~="not-prose"] *)):hover {
+  color: #8B2E3A;
+  background-color: transparent;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Animations
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger children animations */
+.prose > * {
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: calc(var(--index, 0) * 0.05s);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Scrollbar Styling
+   ═══════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0EDE8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6B1C23, #8B2E3A);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #8B2E3A, #B8860B);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Responsive Typography
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .prose :where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    font-size: 1.75rem;
+  }
+  .prose :where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    font-size: 1.35rem;
+  }
+  .prose :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    padding: 0.8em 1em;
+  }
+  .drop-cap::first-letter {
+    font-size: 3em;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Reading Themes (Dark Mode & Sepia)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Dark Mode Theme */
+html.theme-dark {
+  --background: #121212 !important;
+  --foreground: #E0E0E0 !important;
+  
+  --tw-prose-body: #CCCCCC !important;
+  --tw-prose-headings: #E5C158 !important; /* Gold accent for headers */
+  --tw-prose-links: #D4A843 !important;
+  --tw-prose-bold: #FFFFFF !important;
+  --tw-prose-counters: #A0A0A0 !important;
+  --tw-prose-bullets: #D4A843 !important;
+  --tw-prose-quotes: #E5C158 !important;
+  --tw-prose-quote-borders: #D4A843 !important;
+  --tw-prose-captions: #A0A0A0 !important;
+  --tw-prose-hr: rgba(212, 168, 67, 0.2) !important;
+  --tw-prose-th-borders: rgba(212, 168, 67, 0.3) !important;
+  --tw-prose-td-borders: rgba(212, 168, 67, 0.15) !important;
+}
+
+html.theme-dark body {
+  background-color: #121212 !important;
+  color: #E0E0E0 !important;
+}
+
+html.theme-dark .prose {
+  color: #CCCCCC !important;
+}
+
+html.theme-dark .prose :where(h1, h2, h3, h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  color: #E5C158 !important;
+  border-bottom-color: rgba(212, 168, 67, 0.3) !important;
+}
+
+html.theme-dark .prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  color: #D4A843 !important;
+}
+
+html.theme-dark .prose :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  background: linear-gradient(135deg, rgba(212, 168, 67, 0.05), rgba(212, 168, 67, 0.02)) !important;
+  color: #E5C158 !important;
+  border-left-color: #D4A843 !important;
+}
+
+html.theme-dark .prose :where(table):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.theme-dark .prose :where(thead):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  background: linear-gradient(135deg, #1E1E1E, #2A2A2A) !important;
+  color: #E0E0E0 !important;
+}
+
+html.theme-dark .prose :where(tbody tr):not(:where([class~="not-prose"],[class~="not-prose"] *)):nth-child(even) {
+  background-color: rgba(212, 168, 67, 0.03) !important;
+}
+
+html.theme-dark .prose :where(tbody tr):not(:where([class~="not-prose"],[class~="not-prose"] *)):hover {
+  background-color: rgba(212, 168, 67, 0.06) !important;
+}
+
+html.theme-dark ::selection {
+  background-color: rgba(212, 168, 67, 0.3) !important;
+  color: #FFFFFF !important;
+}
+
+/* Sepia Theme */
+html.theme-sepia {
+  --background: #F4ECD8 !important;
+  --foreground: #4A3E3D !important;
+  
+  --tw-prose-body: #5C4D4C !important;
+  --tw-prose-headings: #7A2F37 !important; /* Warm dark red */
+  --tw-prose-links: #8C2A34 !important;
+  --tw-prose-bold: #362A29 !important;
+  --tw-prose-counters: #7A6968 !important;
+  --tw-prose-bullets: #8C2A34 !important;
+  --tw-prose-quotes: #7A2F37 !important;
+  --tw-prose-quote-borders: #8C2A34 !important;
+  --tw-prose-captions: #7A6968 !important;
+  --tw-prose-hr: rgba(140, 42, 52, 0.2) !important;
+  --tw-prose-th-borders: rgba(140, 42, 52, 0.3) !important;
+  --tw-prose-td-borders: rgba(140, 42, 52, 0.15) !important;
+}
+
+html.theme-sepia body {
+  background-color: #F4ECD8 !important;
+  color: #4A3E3D !important;
+}
+
+html.theme-sepia .prose {
+  color: #5C4D4C !important;
+}
+
+html.theme-sepia .prose :where(h1, h2, h3, h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  color: #7A2F37 !important;
+  border-bottom-color: rgba(140, 42, 52, 0.3) !important;
+}
+
+html.theme-sepia .prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  color: #8C2A34 !important;
+}
+
+html.theme-sepia .prose :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  background: linear-gradient(135deg, rgba(140, 42, 52, 0.04), rgba(140, 42, 52, 0.02)) !important;
+  color: #7A2F37 !important;
+  border-left-color: #8C2A34 !important;
+}
+
+html.theme-sepia .prose :where(thead):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  background: linear-gradient(135deg, #E6DBC4, #DDD0B7) !important;
+  color: #4A3E3D !important;
+}
+
+html.theme-sepia .prose :where(tbody tr):not(:where([class~="not-prose"],[class~="not-prose"] *)):nth-child(even) {
+  background-color: rgba(140, 42, 52, 0.03) !important;
+}
+
+html.theme-sepia .prose :where(tbody tr):not(:where([class~="not-prose"],[class~="not-prose"] *)):hover {
+  background-color: rgba(140, 42, 52, 0.06) !important;
+}
+
+html.theme-sepia ::selection {
+  background-color: rgba(140, 42, 52, 0.2) !important;
+  color: #362A29 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Reading Sizes & Fonts
+   ═══════════════════════════════════════════════════════════════ */
+
+html.font-size-sm { font-size: 15px !important; }
+html.font-size-md { font-size: 16px !important; }
+html.font-size-lg { font-size: 18px !important; }
+html.font-size-xl { font-size: 20px !important; }
+
+html.font-sans-active body {
+  font-family: var(--font-sans), sans-serif !important;
+}
+
+html.font-sans-active .prose {
+  font-family: var(--font-sans), sans-serif !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Focus Mode Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+html.focus-mode-active #article-header,
+html.focus-mode-active aside,
+html.focus-mode-active footer,
+html.focus-mode-active #reading-progress-bar,
+html.focus-mode-active .back-to-top {
+  display: none !important;
+}
+
+html.focus-mode-active main {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  max-width: 54rem !important; /* Center column max-width */
+}
+
+html.focus-mode-active main > div {
+  flex-direction: column !important;
+}
+
+html.focus-mode-active main .flex-1 {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+html.focus-mode-active .prose {
+  max-width: 80ch !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Print Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+@media print {
+  #reading-progress-bar,
+  .back-to-top,
+  aside,
+  header .animate-fade-in,
+  header .ornament-line,
+  header .flex-1,
+  footer p:nth-child(3),
+  #reading-settings-btn,
+  #mobile-toc-btn {
+    display: none !important;
+  }
+  
+  html, body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt !important;
+  }
+  
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .prose {
+    max-width: 100% !important;
+    color: black !important;
+  }
+  
+  .prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    border-bottom: none !important;
+    color: black !important;
+    font-weight: bold;
+  }
+  
+  blockquote, table, pre {
+    page-break-inside: avoid;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+}
