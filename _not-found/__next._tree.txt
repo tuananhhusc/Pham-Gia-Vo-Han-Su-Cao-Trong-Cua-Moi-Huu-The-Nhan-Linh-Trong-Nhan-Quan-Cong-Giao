@@ -1,2 +1,2 @@
 :HL["/Pham-Gia-Vo-Han-Su-Cao-Trong-Cua-Moi-Huu-The-Nhan-Linh-Trong-Nhan-Quan-Cong-Giao/_next/static/chunks/02_wq7ueqa29v.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"LVnR6g1ZrYrAOhGj9uIk3"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"lEuu2gE0Jj2e4ZlJGc1yg"}
